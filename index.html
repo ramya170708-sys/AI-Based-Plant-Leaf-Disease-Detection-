@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plant Leaf Disease Detection</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #d4fc79, #96e6a1);
+        }
+
+        .container {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            width: 500px;
+        }
+
+        h1 {
+            color: #2e7d32;
+            font-size: 36px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        input {
+            margin: 20px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #2e7d32;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1b5e20;
+        }
+
+        h2 {
+            margin-top: 25px;
+            color: #d32f2f;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🌱 Plant Leaf Disease Detection</h1>
+
+        <p>Upload a tomato leaf image to detect its condition.</p>
+
+        <form method="POST" enctype="multipart/form-data">
+
+            <input type="file" name="image" accept="image/*" required>
+
+            <br>
+
+            <button type="submit">Predict Disease</button>
+
+        </form>
+
+        {% if prediction %}
+            <h2>Prediction: {{ prediction }}</h2>
+        {% endif %}
+
+    </div>
+
+</body>
+</html>
